@@ -4,9 +4,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "classes")
-public class Klase {
+public class Class {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "class_id")
     private Long classId;
+
+    @Column(name ="class_name")
+    private String className;
+
 }
