@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -18,5 +20,10 @@ public class ClassController {
     public ResponseEntity<List<Class>> getAll(){
         List<Class> classes = classService.getAllClasses();
         return ResponseEntity.ok(classes);
+    }
+
+    @PostMapping("/create-class")
+    public ResponseEntity<Class> createClass(@RequestBody Class creatingClass){
+        return ResponseEntity.ok(classService.createClass(creatingClass));
     }
 }

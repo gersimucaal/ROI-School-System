@@ -12,8 +12,14 @@ public class ClassService {
     @Autowired
     private ClassRepository classRepository;
 
+    // getting all classes of school
     public List<Class> getAllClasses(){
         List<Class> classes = classRepository.findAll();
         return classes;
+    }
+    // creating class
+    public Class createClass(Class creatingClass){
+        classRepository.save(creatingClass);
+        return creatingClass;
     }
 }
