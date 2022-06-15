@@ -1,1 +1,5 @@
 com\gersimuca\school_project\SchoolProjectApplication.class
+com\gersimuca\school_project\repositories\ClassRepository.class
+com\gersimuca\school_project\controllers\ClassController.class
+com\gersimuca\school_project\services\ClassService.class
+com\gersimuca\school_project\enititis\Classes.class
