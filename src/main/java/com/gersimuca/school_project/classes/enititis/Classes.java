@@ -1,4 +1,4 @@
-package com.gersimuca.school_project.enititis;
+package com.gersimuca.school_project.classes.enititis;
 
 import javax.persistence.*;
 
@@ -13,6 +13,7 @@ public class Classes {
     @Column(name ="class_name", unique = true)
     private String className;
 
+
     public Long getClassesId() {
         return classesId;
     }
@@ -26,7 +27,7 @@ public class Classes {
     }
 
     public void setClassName(String className) {
-        this.className = className;
+        this.className = className.toUpperCase();
     }
 
     public Classes(){}

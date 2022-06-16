@@ -1,6 +1,11 @@
-package com.gersimuca.school_project.enititis;
+package com.gersimuca.school_project.students.enititis;
+
+import com.gersimuca.school_project.subjects.enititis.Subject;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
 
 @Entity
 @Table(name = "students")
@@ -16,12 +21,10 @@ public class StudentClass {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "phone_number")
-    private int phoneNumber;
+    @ManyToMany(mappedBy = "enrolledStudents")
+    Set<Subject> subjects = new HashSet<>();
 
-    @ManyToOne
-    @JoinColumn(name = "classes_id")
-    private Classes classes;
+
 
     public Long getStudentId() {
         return studentId;
@@ -36,7 +39,7 @@ public class StudentClass {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstName = firstName.toUpperCase();
     }
 
     public String getLastName() {
@@ -44,23 +47,12 @@ public class StudentClass {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName = lastName.toUpperCase();
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
+    public Set<Subject> getSubjects() {
+        return subjects;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Classes getClasses() {
-        return classes;
-    }
-
-    public void setClasses(Classes classes) {
-        this.classes = classes;
-    }
     public StudentClass(){}
 }
