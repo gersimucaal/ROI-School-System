@@ -4,6 +4,7 @@ import com.gersimuca.school_project.classes.enititis.Classes;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
@@ -22,6 +23,7 @@ public class StudentClass {
     @Column(name = "last_name")
     private String lastName;
 
+
     public Long getStudentId() {
         return studentId;
     }
@@ -35,7 +37,7 @@ public class StudentClass {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName.toUpperCase();
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -43,9 +45,8 @@ public class StudentClass {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName.toUpperCase();
+        this.lastName = lastName;
     }
-
 
     public StudentClass(){}
 }

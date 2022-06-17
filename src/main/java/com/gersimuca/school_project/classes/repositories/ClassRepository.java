@@ -8,8 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ClassRepository extends JpaRepository<Classes, Long> {
-    Classes findClassesByClassName(String ClassName);
     Classes findClassesByClassesId(Long classesId);
 
-    List<Classes>  findByClassNameContaining(String className);
 }
