@@ -1,7 +1,6 @@
 package com.gersimuca.school_project.subjects.enititis;
 
 import com.gersimuca.school_project.students.enititis.StudentClass;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -18,12 +17,6 @@ public class Subject {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany
-    @JoinTable( name = "student_enrolled",
-            joinColumns = @JoinColumn(name = "subject_id"),
-            inverseJoinColumns = @JoinColumn(name ="student_id"))
-
-    private Set<StudentClass> enrolledStudents = new HashSet<>();
 
     public Long getSubjectId() {
         return subjectId;
@@ -41,9 +34,6 @@ public class Subject {
         this.name = name.toUpperCase();
     }
 
-    public Set<StudentClass> getEnrolledStudents() {
-        return enrolledStudents;
-    }
 
     public Subject(){}
 }

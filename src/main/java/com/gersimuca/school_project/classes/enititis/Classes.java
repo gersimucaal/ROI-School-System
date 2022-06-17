@@ -1,6 +1,10 @@
 package com.gersimuca.school_project.classes.enititis;
 
+import com.gersimuca.school_project.students.enititis.StudentClass;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "classes")
@@ -12,7 +16,6 @@ public class Classes {
 
     @Column(name ="class_name", unique = true)
     private String className;
-
 
     public Long getClassesId() {
         return classesId;
@@ -29,6 +32,7 @@ public class Classes {
     public void setClassName(String className) {
         this.className = className.toUpperCase();
     }
+
 
     public Classes(){}
 }

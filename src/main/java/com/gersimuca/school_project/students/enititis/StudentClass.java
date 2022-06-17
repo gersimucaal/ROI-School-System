@@ -1,6 +1,7 @@
 package com.gersimuca.school_project.students.enititis;
 
-import com.gersimuca.school_project.subjects.enititis.Subject;
+import com.gersimuca.school_project.classes.enititis.Classes;
+
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -20,11 +21,6 @@ public class StudentClass {
 
     @Column(name = "last_name")
     private String lastName;
-
-    @ManyToMany(mappedBy = "enrolledStudents")
-    Set<Subject> subjects = new HashSet<>();
-
-
 
     public Long getStudentId() {
         return studentId;
@@ -50,9 +46,6 @@ public class StudentClass {
         this.lastName = lastName.toUpperCase();
     }
 
-    public Set<Subject> getSubjects() {
-        return subjects;
-    }
 
     public StudentClass(){}
 }
