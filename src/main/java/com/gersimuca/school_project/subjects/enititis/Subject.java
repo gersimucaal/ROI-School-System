@@ -7,15 +7,21 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name ="subjects")
+@Table(
+        name ="subjects",
+        uniqueConstraints = @UniqueConstraint(
+                name = "subject_name_unique",
+                columnNames = "subject_name"
+        ))
 public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="subject_id")
     private Long subjectId;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "subject_name",
+            nullable = false)
+    private String subjectName;
 
 
     public Long getSubjectId() {
@@ -27,11 +33,11 @@ public class Subject {
     }
 
     public String getName() {
-        return name;
+        return subjectName;
     }
 
     public void setName(String name) {
-        this.name = name.toUpperCase();
+        this.subjectName = name.toUpperCase();
     }
 
 

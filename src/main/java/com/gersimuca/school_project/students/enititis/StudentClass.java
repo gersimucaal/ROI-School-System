@@ -1,6 +1,7 @@
 package com.gersimuca.school_project.students.enititis;
 
-import com.gersimuca.school_project.classes.enititis.Classes;
+import com.gersimuca.school_project.majors.enititis.Major;
+import com.gersimuca.school_project.subjects.enititis.Subject;
 
 
 import javax.persistence.*;
@@ -37,7 +38,7 @@ public class StudentClass {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstName = firstName.toUpperCase();
     }
 
     public String getLastName() {
@@ -45,8 +46,13 @@ public class StudentClass {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName = lastName.toUpperCase();
     }
+
+//    public Set<Classes> getCourses() {
+//        return courses;
+//    }
+
 
     public StudentClass(){}
 }
